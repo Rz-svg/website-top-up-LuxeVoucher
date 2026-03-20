@@ -1,0 +1,71 @@
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Efek Hover Glowing pada Tombol */
+.btn-buy {
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-buy:hover {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    transform: scale(1.05);
+}
+
+/* Badge Diskon/Populer */
+.badge-promo {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Custom Scrollbar Emas */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0c; }
+::-webkit-scrollbar-thumb { 
+    background: var(--gold-primary); 
+    border-radius: 10px; 
+}
+
+/* Notifikasi Toast (Pesan kecil di pojok) */
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1001;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    border: 1px solid var(--gold-primary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#toast.show {
+    visibility: visible;
+    animation: fadeInUp 0.4s, fadeOut 0.4s 2.5s;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

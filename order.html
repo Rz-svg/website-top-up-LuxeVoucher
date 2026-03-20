@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan | LuxeVoucher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <div class="container">
+        
+        <div class="section-card">
+            <h2 class="section-title">1. Masukkan Data Akun</h2>
+            <div class="input-group">
+                <input type="text" id="user-id" placeholder="Masukkan User ID">
+                <input type="text" id="zone-id" placeholder="Zone ID (Contoh: 1234)">
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title">2. Pilih Nominal Top Up</h2>
+            <div class="grid-options">
+                <div class="option-card diamond-card" data-price="15000">
+                    <div class="item-name">86 Diamonds</div>
+                    <div class="item-price">Rp 15.000</div>
+                </div>
+                <div class="option-card diamond-card" data-price="45000">
+                    <div class="item-name">257 Diamonds</div>
+                    <div class="item-price">Rp 45.000</div>
+                </div>
+                <div class="option-card diamond-card" data-price="120000">
+                    <div class="item-name">706 Diamonds</div>
+                    <div class="item-price">Rp 120.000</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2 class="section-title">3. Pilih Pembayaran</h2>
+            <div class="grid-options">
+                <div class="option-card payment-card" data-method="Qris">
+                    <div class="item-name">QRIS</div>
+                </div>
+                <div class="option-card payment-card" data-method="Gopay">
+                    <div class="item-name">GoPay</div>
+                </div>
+                <div class="option-card payment-card" data-method="BCA">
+                    <div class="item-name">Transfer BCA</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="checkout-footer">
+        <div>
+            <div style="font-size: 12px; color: #a0a0a0;">Total Pembayaran</div>
+            <div class="total-price" id="total-price">Rp 0</div>
+        </div>
+        <button class="btn-buy" id="btn-buy">Beli Sekarang</button>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>

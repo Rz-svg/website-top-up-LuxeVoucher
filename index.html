@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeVoucher | Premium Game Top Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables untuk Tema Mewah */
+        :root {
+            --bg-dark: #0a0a0c;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --gold-primary: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --text-light: #f8f8f2;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Elegan */
+        header {
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 5% 100px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--gold-primary);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #000;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin: 50px 0 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-primary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Game Grid (Glassmorphism) */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+        }
+
+        .game-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            background-color: #1a1a24; /* Placeholder color */
+        }
+
+        .game-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .game-publisher {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--gold-primary);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .nav-links { display: none; /* Disembunyikan untuk mobile sementara */ }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">LuxeVoucher</a>
+            <div class="nav-links">
+                <a href="#">Beranda</a>
+                <a href="#">Daftar Harga</a>
+                <a href="#">Cara Top Up</a>
+                <a href="#">Hubungi Kami</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Elevate Your <span>Gaming</span> Experience</h1>
+        <p>Platform top-up premium dengan layanan instan, aman, dan harga terbaik. Tingkatkan gaya bermain Anda hari ini.</p>
+        <a href="#games" class="btn-gold">Top Up Sekarang</a>
+    </section>
+
+    <h2 class="section-title" id="games">Premium Titles</h2>
+    <div class="game-grid">
+        <div class="game-card">
+            <img src="mobile legend.webp" alt="Mobile Legends" class="game-img">
+            <div class="game-title">Mobile Legends</div>
+            <div class="game-publisher">Moonton</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="Valorant.jpg" alt="Valorant" class="game-img">
+            <div class="game-title">Valorant</div>
+            <div class="game-publisher">Riot Games</div>
+        </div>
+
+        <div class="game-card">
+            <img src="Genshin Impact.webp" alt="Genshin Impact" class="game-img">
+            <div class="game-title">Genshin Impact</div>
+            <div class="game-publisher">HoYoverse</div>
+        </div>
+
+        <div class="game-card">
+            <img src="Pubg Mobile.jpg" alt="PUBG Mobile" class="game-img">
+            <div class="game-title">PUBG Mobile</div>
+            <div class="game-publisher">Tencent Games</div>
+        </div>
+
+        <div class="game-card">
+            <img src="Honor Of king.jpg" alt="Honor Off King" class="game-img">     
+            <div class="game-title">Honor Off King</div>
+            <div class="game-publisher">Tencent Games</div>
+        </div>
+
+        <div class="game-card">
+            <img src="Free Fire.jpg" alt="Free Fire" class="game-img">
+            <div class="game-title">Free Fire</div>
+            <div class="game-publisher">Garena Games</div>
+        </div>
+
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <span>LuxeVoucher</span>. All Rights Reserved.</p>
+        <p>Layanan Top Up Game Cepat, Aman & Terpercaya.</p>
+    </footer>
+
+</body>
+</html>
